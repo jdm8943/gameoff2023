@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 1539281424}
   - component: {fileID: 1539281425}
   - component: {fileID: 1539281426}
+  - component: {fileID: 1539281427}
   m_Layer: 0
   m_Name: test_Player
   m_TagString: Untagged
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 900fd1acdaf063948a822ada2b555198, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 536b2da9c4d19f64c917d1215b94f2af, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -319,10 +320,10 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: cdcc13aeea4989240bb2c4c022a7b589, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 1539281427}
+        m_TargetAssemblyTypeName: Player_Input, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -331,61 +332,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 304f0e0a-d4d5-4f58-9141-8996a79599e7
+    m_ActionId: 022b1893-96bd-4eaf-b9ae-f44188d7acad
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 278bf9a0-1bd0-42c9-84c8-818473e8d3a2
-    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
+    m_ActionId: 7ef0154c-6e4d-48ec-b07c-09146f7bd918
+    m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 5d5888d0-5770-4108-bec8-a09a1272b0d8
+    m_ActionId: 0355a979-0852-4a8b-92a0-4b4ba7e7bc3f
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 2c1809b2-73ed-4835-bef4-0f86693e622e
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: df4170bd-2021-4c14-8583-2aa42a6adcf0
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 18c97529-62c3-4967-9dc1-d33c3831761d
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7148cbbd-de00-4bd5-9d8b-d32b379fc10b
-    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2fab2ee7-1735-4a0b-a9bf-16ff6d9ae2ce
-    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 01cda352-4945-4fa7-8dd5-429807314cfa
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b7f5986c-b5ac-4d51-bf13-1605df4bd332
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 89fdcc0e-8a4e-45f3-b2e8-3653bdbcb77a
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fe1e55b6-0e60-45bc-8157-d0eba539a25a
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7c746cad-1fbd-4560-a536-6928e59c774a
-    m_ActionName: UI/TrackedDeviceOrientation
+    m_ActionId: 41ed6119-13a7-4591-a262-acceac7b2d5c
+    m_ActionName: Player/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1539281427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539281423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcc13aeea4989240bb2c4c022a7b589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1953484148
 GameObject:
   m_ObjectHideFlags: 0
