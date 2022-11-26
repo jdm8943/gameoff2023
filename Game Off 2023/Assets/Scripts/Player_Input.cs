@@ -1,30 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player_Input : MonoBehaviour
 {
+    [SerializeField]
+    float speed = 1f;
 
-    Vector2 vel;
+    Vector3 vehiclePosition = Vector3.zero;
+    Vector3 direction = Vector3.zero;
+    Vector3 velocity = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
+        vehiclePosition = transform.position;
 
-            vel = Vector2.up * vel;
-            /*transform.rotation = transform.rotation * qPitchPlus;
+        // Velocity is direction * speed * deltaTime
+        velocity = direction * speed * Time.deltaTime;
 
-            rotorSpinner.setSpin(RotorSpinner.LiftMode.HIGH);
+        // Add velocity to position 
+        vehiclePosition += velocity;
 
-            vel = Vector3.ProjectOnPlane(windSpeed * transform.up, Vector3.up);*/
-        }
+        // “Draw” this vehicle at that position
+        transform.position = vehiclePosition;
+
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        direction = context.ReadValue<Vector2>();
+
+        transform.rotation = Quaternion.LookRotation(Vector3.back, direction);
     }
 }
