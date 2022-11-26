@@ -891,7 +891,7 @@ public partial class @GameOff2023 : IInputActionCollection2, IDisposable
     void Awake()
     {
         playerActions = new PlayerActions();
-        rigidbody = 
+        /*rigidbody = */
     }
 
     public InputBinding? bindingMask
